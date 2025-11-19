@@ -1,0 +1,8 @@
+# no external dependencies
+# This file is intentionally left blank
+# to indicate that there are no required packages for this project.
+# can add dependencies here in the future if needed.
+# Example:
+# numpy==1.21.0
+# pandas==1.3.0
+# requests==2.26.0
