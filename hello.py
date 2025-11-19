@@ -1,3 +1,5 @@
+"simple hello world function with enhanced logging and input handling"
+
 import logging
 
 logging.basicConfig(
@@ -15,12 +17,18 @@ def say_hello(name="World"):
     - If name is not a string, raises TypeError
     """
     if not isinstance(name, str):
+        logging.error("Invalid type for name: %s", type(name))
         raise TypeError("name must be a string")
 
     stripped = name.strip()
+    logging.info("Received name input: '%s'", name)
+
 
     if stripped == "":
+        logging.info("Empty or whitespace-only name provided, using default 'World'")
         stripped = "World"
+    else:
+        logging.info("Using cleaned name: %r", stripped)
 
     return f"Hello, {stripped}!"
 
