@@ -1,5 +1,8 @@
 name: CI Pipeline
 
+permissions:
+  contents: read
+  
 on:
   push:
     branches: [ "**" ]
@@ -104,6 +107,8 @@ jobs:
     needs: [lint_and_test, security_scan, docs]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
