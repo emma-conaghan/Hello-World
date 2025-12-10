@@ -1,17 +1,15 @@
-.. Hello World Project documentation master file, created by
-   sphinx-quickstart on Wed Dec 10 19:51:29 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Hello World Project documentation
+Hello World Project Documentation
 =================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Welcome to the documentation site for the Hello World Project!
 
+Below you will find automatically generated documentation for the codebase.
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Modules:
 
+   hello
