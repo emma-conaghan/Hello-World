@@ -1,39 +1,20 @@
-"simple hello world function with enhanced logging and input handling"
-
 import logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
+logger = logging.getLogger(__name__)
 
 def say_hello(name="World"):
     """
-    Return a friendly greeting.
-
-    - If name is not provided, defaults to 'World'
-    - If name is a string with leading/trailing spaces, they are stripped
-    - If name is an empty string (after stripping), defaults to 'World'
-    - If name is not a string, raises TypeError
+    Return a friendly greeting with input validation/cleaning.
     """
     if not isinstance(name, str):
-        logging.error("Invalid type for name: %s", type(name))
+        logger.error("Invalid type for name: %s", type(name))
         raise TypeError("name must be a string")
 
+    logger.info("Received name input: %r", name)
+
     stripped = name.strip()
-    logging.info("Received name input: '%s'", name)
-
-
     if stripped == "":
-        logging.info("Empty or whitespace-only name provided, using default 'World'")
+        logger.info("Empty name provided, defaulting to 'World'")
         stripped = "World"
-    else:
-        logging.info("Using cleaned name: %r", stripped)
 
     return f"Hello, {stripped}!"
-
-
-# Allow interactive input ONLY when running this file directly
-if __name__ == "__main__":
-    user_name = input("Enter your name: ")
-    print(say_hello(user_name))
