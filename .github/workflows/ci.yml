@@ -144,7 +144,7 @@ jobs:
           zip -r dist/hello-world.zip .
 
       - name: Upload artefact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: hello-world-dist
           path: dist/hello-world.zip
